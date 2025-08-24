@@ -13,7 +13,11 @@ pipeline {
             steps { bat 'start gradlew test'}
         }
         stage('Deploy') {
-            steps { powershell 'java -jar build/libs/hello-world-java-V1.jar'}           
+            steps { 
+               powershell """
+        java -jar "${env.WORKSPACE}\\build\\libs\\hello-world-java-V1.jar"
+        """
+            }           
         }    
 }
 
