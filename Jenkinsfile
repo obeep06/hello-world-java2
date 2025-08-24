@@ -10,7 +10,7 @@ pipeline {
             steps { bat 'gradlew build'}
         }
         stage('Test') {
-            steps { bat 'gradlew test'}
+            steps { bat 'gradlew test'} //ee
         }
         stage('Deploy') {
             steps { 
